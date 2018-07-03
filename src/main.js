@@ -2,22 +2,10 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import FastClick from 'fastclick'
-import VueRouter from 'vue-router'
 import App from './App'
-import Home from './components/HelloFromVux'
 import router from './router'
 import store from './store'
-
-Vue.use(VueRouter)
-
-const routes = [{
-  path: '/',
-  component: Home
-}]
-
-const router = new VueRouter({
-  routes
-})
+import request from './ajax'
 
 FastClick.attach(document.body)
 
@@ -28,5 +16,5 @@ Vue.prototype.$http = request
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app-box')
