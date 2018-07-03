@@ -23,6 +23,7 @@ FastClick.attach(document.body)
 
 Vue.config.productionTip = false
 
+Vue.prototype.$http = request
 /* eslint-disable no-new */
 new Vue({
   router,
