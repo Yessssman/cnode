@@ -6,15 +6,11 @@ const mutations = {
    state.isLogined = true;
    console.log(state.isLogined)
  },
-  mutationLogout: function (state) {
-    state.isLogined = false;
-    console.log(state.isLogined)
-  },
   mutationUserInfo: function (state, payload) {
     state.userinfo = {
-      loginname: payload.loginname,
-      id: payload.id,
-      avatar_url: payload.avatar_url
+      loginname: payload.userinfo.loginname,
+      id: payload.userinfo.id,
+      avatar_url: payload.userinfo.avatar_url
     }
   }
 }

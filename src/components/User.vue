@@ -12,41 +12,29 @@
         <cell v-for="(item, index) in userinfo.recent_topics" :key="index" :title="item.title" is-link :link="'/topic/' + item.id"></cell>
       </group>
     </card>
-    <card :header="{title: '收藏的主题'}">
-      <group slot="content">
-        <cell v-for="(item, index) in usercollect" :key="index" :title="item.title" is-link :link="'/topic/' + item.id"></cell>
-      </group>
-    </card>
   </div>
 </template>
 
 <script>
-  import { Card, Group, Cell } from 'vux'
+  import { Card } from 'vux'
     export default {
         name: "User",
       props:['loginname'],
       components: {
-        Card,
-        Group,
-        Cell
+        Card
       },
       data() {
         return {
-          userinfo: '',
-          usercollect: ''
+          userinfo: ''
         }
       },
       beforeRouteEnter(to, from, next) {
           next(function (vm) {
-            // console.log(vm);
+            console.log(vm);
             vm.$http.get('/user/' + to.params.loginname).then(function (response) {
               if(response.data.success){
                 vm.userinfo = response.data.data;
               }
-            });
-            vm.$http.get('/topic_collect/' + to.params.loginname).then(function (response) {
-              if(response.data.success)
-              vm.usercollect = response.data.data;
             })
           })
       },
@@ -57,10 +45,6 @@
               app.userinfo = response.data.data
             }
           });
-          this.$http.get('/topic_collect/' + to.params.loginname).then(function (response) {
-            if (response.data.success)
-              app.usercollect = response.data.data;
-          });
         next();
       }
     }
@@ -70,8 +54,4 @@
  .card_content p{
 
  }
-  .card_content img{
-    width: 30px;
-    height: 30px;
-  }
 </style>
