@@ -33,7 +33,7 @@
         return {
           list: [],
           page: 1,
-          limit: 5,
+          limit: 10,
           lim: 0,
           pullupConfig: {
             content: '上拉加载更多',
