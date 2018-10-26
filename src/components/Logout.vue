@@ -5,22 +5,20 @@
 </template>
 
 <script>
-    export default {
-        name: "Logout",
-      data() {
-        return {
-          loginname: ''
-        }
-      },
-      created() {
-          this.loginname = window.localStorage.getItem('loginname');
-          window.localStorage.clear();
-
-          setTimeout(this.$router.push('/#/topiclist/all'),)
-      }
-    }
+export default {
+  name: "Logout",
+  data() {
+    return {
+      loginname: ""
+    };
+  },
+  created() {
+    this.loginname = window.localStorage.getItem("loginname");
+    window.localStorage.clear();
+    setTimeout(() => this.$router.push({path: "/topiclist/all"}), 5000);
+  }
+};
 </script>
 
 <style scoped>
-
 </style>

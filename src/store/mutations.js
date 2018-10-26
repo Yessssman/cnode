@@ -8,9 +8,9 @@ const mutations = {
  },
   mutationUserInfo: function (state, payload) {
     state.userinfo = {
-      loginname: payload.userinfo.loginname,
-      id: payload.userinfo.id,
-      avatar_url: payload.userinfo.avatar_url
+      loginname: payload.loginname,
+      id: payload.id,
+      avatar_url: payload.avatar_url
     }
   }
 }

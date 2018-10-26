@@ -53,10 +53,11 @@ export default {
       this.mutationUserInfo(userinfo);
       console.log(this.$store.state.userinfo);
       console.log('App.vue => login')
-    }else{
-      this.mutationLogout();
-      console.log('App.vue => logout')
     }
+    // else{
+    //   this.mutationLogout();
+    //   console.log('App.vue => logout')
+    // }
   },
   data() {
     return {
